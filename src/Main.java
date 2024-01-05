@@ -43,7 +43,6 @@ public class Main {
 
 
 
-        // Print the route and the concert lists for each city
         System.out.println("Optimal Concert Tour Route:");
         for (City city : optimalRoute) {
         System.out.println(city.getName() + " - Latitude: " + city.getX() + ", Longitude: " + city.getY() + ", Concert Duration: " + city.getConcertDuration() + " mins");

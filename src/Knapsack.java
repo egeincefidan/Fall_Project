@@ -21,7 +21,7 @@ public class Knapsack {
                     continue; 
                 }
                 String[] data = line.split(csvSplitBy);
-                String name = data[0]; // Şarkının adı
+                String name = data[0];
                 double popularity = Double.parseDouble(data[1]);
                 double duration = Double.parseDouble(data[2]);
                 songs.add(new Song(name, popularity, duration));
@@ -36,11 +36,9 @@ public class Knapsack {
         List<Song> selectedSongs = new ArrayList<>();
         double currentDuration = 0.0;
     
-        // Şarkıları popülaritesine göre azalan şekilde sırala
         allSongs.sort((s1, s2) -> Double.compare(s2.popularity, s1.popularity));
     
         for (Song song : allSongs) {
-            // Süre sınırlamasını aşmamak şartıyla şarkıları ekle
             if (currentDuration + song.duration <= concertDuration) {
                 selectedSongs.add(song);
                 currentDuration += song.duration;
@@ -56,18 +54,16 @@ public class Knapsack {
         List<City> cities = CSVParser.parseCities(fileName);
         Map<City, List<Song>> result = new HashMap<>();
 
-        // Her şehir için konser programını oluştur ve yazdır
     for (City city : cities) {
         double concertDuration = city.getConcertDuration();
         List<Song> concertSongs = selectSongsForConcert(songs, concertDuration);
         result.put(city, concertSongs);
 
-        // Konsola yazdır
         System.out.println("Concert in " + city.getName() + " (" + concertDuration + " mins):");
         for (Song song : concertSongs) {
             System.out.println("Popularity: " + song.popularity + " - Duration: " + song.duration);
         }
-        System.out.println(); // Şehirler arası boşluk bırak
+        System.out.println();
     }
     }
 }

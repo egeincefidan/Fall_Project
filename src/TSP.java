@@ -15,7 +15,6 @@ public class TSP {
         visited[0] = true;
         tour.add(currentCity);
 
-    // Repeat until all cities are visited
     while (tour.size() < numCities) {
         City nearest = null;
         double nearestDistance = Double.MAX_VALUE;
@@ -30,7 +29,6 @@ public class TSP {
             }
         }
 
-        // Move to the nearest unvisited city
         tour.add(nearest);
         visited[cities.indexOf(nearest)] = true;
         currentCity = nearest;
