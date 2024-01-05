@@ -3,7 +3,7 @@ from knapsack import Knapsack
 from tsp import TSP
 
 def main():
-    songs = CSVParser.parse_songs("songs_data.csv")
+    songs = CSVParser.parse_songs("G:\Belgeler\Fall_Project\Fall_Project\data\songs_data.csv")
     max_duration = 200  # Replace this value with your desired maximum duration
     selected_songs = Knapsack.knapsack(songs, max_duration)
     for song in selected_songs:

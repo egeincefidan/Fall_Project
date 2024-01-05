@@ -3,11 +3,13 @@ public class City {
     private String name;
     private double latitude;
     private double longitude;
+    private double concertDuration;
 
-    public City(String name, double latitude, double longitude) {
+    public City(String name, double latitude, double longitude, double concertDuration) {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.concertDuration = concertDuration;
     }
     public double distanceTo(City otherCity) {
         double xDistance = Math.abs(this.latitude - otherCity.getX());
@@ -25,5 +27,8 @@ public class City {
 
     public double getY() {
         return longitude;
+    }
+    public double getConcertDuration() {
+        return concertDuration;
     }
 }

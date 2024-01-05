@@ -24,8 +24,10 @@ public class CSVParser {
                 String cityName = data[0].trim();
                 double latitude = Double.parseDouble(data[2].trim());
                 double longitude = Double.parseDouble(data[3].trim());
+                double concertDuration = Double.parseDouble(data[4]);
 
-                City city = new City(cityName, latitude, longitude);
+
+                City city = new City(cityName, latitude, longitude, concertDuration);
                 cities.add(city);
             }
         } catch (Exception e) {
